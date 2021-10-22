@@ -1,0 +1,17 @@
+{{#each errors}}
+  <div class="alert alert-danger">{{message}}</div>
+{{else}}
+{{/each}}
+
+<div class="col">
+  <div class="row"><a type="button" class="btn btn-primary" href="/novo"><i
+        class="fas fa-user-plus"
+      ></i>
+      Novo</a></div>
+  <div class="row"><a
+      type="button"
+      class="btn btn-primary mt-3"
+      href="/usuarios"
+    ><i class="fas fa-user"></i>
+      Listar Usuários</a></div>
+</div>

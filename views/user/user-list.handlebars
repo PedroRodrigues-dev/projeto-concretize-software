@@ -1,0 +1,47 @@
+<h1 class="text-center"><i class="fas fa-users"></i> Usuários </h1>
+<div class="card mx-auto">
+  <div class="card-body mx-auto">
+    <form action="" method="post">
+      <div class="input-group mb-3">
+        <div class="input-group-text">
+          <select class="form-select form-control" name="filters">
+            <option selected>Filtros</option>
+            <option value="0">Código</option>
+            <option value="1">Nome</option>
+          </select>
+        </div>
+        <input type="text" class="form-control" name="searchBox" />
+        <div class="input-group-text">
+          <button type="submit" class="btn btn-primary"><i
+              class="fas fa-search"
+            ></i></button>
+        </div>
+      </div>
+    </form>
+    <div class="row mx-auto">
+      {{#each users}}
+        <div class="col-sm mx-auto">
+          <div class="card mx-auto" style="width: 18rem;">
+            <div class="card-body">
+                <form action="/deletar" method="POST">
+                  <input type="hidden" name="id" value="{{_id}}" />
+                  <div class="row">
+                    <div class="col"><h5 class="card-title">{{name}}</div>
+                    <div class="col text-end"> <button type="submit" class="btn btn-danger mt-2"><i
+                      class="fas fa-trash"
+                    ></i></button></div>
+                  </div>
+                </form></h5>
+              <h6 class="card-subtitle mb-2 text-muted">{{code}}</h6>
+              <p class="card-text">E-mail: {{email}} <br /> CPF: {{cpf}} </p>
+
+            </div>
+          </div>
+        </div>
+      {{else}}
+        <h4 class="mt-3"><i class="fas fa-dizzy"></i>
+          Não há usuários cadastrados</h4>
+      {{/each}}
+    </div>
+  </div>
+</div>

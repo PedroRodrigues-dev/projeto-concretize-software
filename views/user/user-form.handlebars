@@ -1,0 +1,48 @@
+{{#each errors}}
+  <div class="alert alert-danger">{{message}}</div>
+{{else}}
+{{/each}}
+<div class="card mx-auto col-lg-4 col-sm-7">
+  <div class="card-header h3">
+    Editar
+  </div>
+  <div class="card-body">
+    <form action="" method="POST">
+      <div class="mb-3">
+        <label for="code" class="form-label">Código</label>
+        <input
+          type="number"
+          class="form-control"
+          name="code"
+          readonly
+          value="{{code}}"
+        />
+      </div>
+      <div class="mb-3">
+        <input type="hidden" name="id" value="{{users._id}}" />
+        <label for="name" class="form-label">Nome</label>
+        <input
+          type="text"
+          class="form-control"
+          name="name"
+          value="{{users.name}}"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="cpf" class="form-label">CPF</label>
+        <input type="number" class="form-control" name="cpf" />
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input
+          type="email"
+          class="form-control"
+          name="email"
+          value="{{users.email}}"
+        />
+      </div>
+      <button type="submit" class="btn btn-primary">Salvar</button>
+      <a type="button" class="btn btn-secondary" href="/">Cancelar</a>
+    </form>
+  </div>
+</div>
